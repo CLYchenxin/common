@@ -28,11 +28,11 @@
     if (minute < 60) {
         if (minute < 1) return @"刚刚";
 
-        return [NSString stringWithFormat:@"%ld 分钟前", (minute <= 1 ? 1 : minute)];
+        return [NSString stringWithFormat:@"%ld 分钟前", (long)(minute <= 1 ? 1 : minute)];
     } else {
         NSInteger hour = (minute / 60);
         if (hour < 24) {
-            return [NSString stringWithFormat:@"%ld 小时前", (hour <= 1 ? 1 : hour)];
+            return [NSString stringWithFormat:@"%ld 小时前", (long)(hour <= 1 ? 1 : hour)];
         } else {
             NSInteger day = (hour / 24);
 

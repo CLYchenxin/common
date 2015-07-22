@@ -12,4 +12,6 @@
 
 - (NSString *)fgl_frendlyDescription;
 
++ (NSDate *)fgl_dateFormString:(NSString *)string;
+
 @end

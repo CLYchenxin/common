@@ -8,17 +8,24 @@
 
 #import "NSError+FGLErrorCenter.h"
 
-NSString *const FGLNetworkErrorDomain = @"FGLNetworkErrorDomain";
-NSString *const FGLServerErrorDomain = @"FGLServerErrorDomain";
-NSString *const FGLLogicErrorDomain = @"FGLLogicErrorDomain";
+NSString *const FGLNetworkErrorDomain = @"FGLNetworkErrorDomain"; 
+NSString *const FGLServerErrorDomain = @"FGLServerErrorDomain";   
+NSString *const FGLLogicErrorDomain = @"FGLLogicErrorDomain";    
 
-NSString *const FGLObjectErrorKey = @"FGLObjectErrorKey";
-NSString *const FGLFailureAddressErrorKey = @"FGLFailureAddressErrorKey";
-
-NSString *const FGLDidReceiveErrorNotification = @"FGLDidReceiveErrorNotification";
 NSString *const FGLLocalizedDescriptionKey = @"FGLLocalizedDescriptionKey";
 
 @implementation NSError (FGLErrorCenter)
 
-@end
+- (NSString *)fgl_errorDescription
+{
+    NSString *message = self.userInfo[FGLLocalizedDescriptionKey];
+    if (!message) {
+        message = self.localizedDescription;
+    }
 
+    assert(message != nil);
+
+    return message;
+}
+
+@end

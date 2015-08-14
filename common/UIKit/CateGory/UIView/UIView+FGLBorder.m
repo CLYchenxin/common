@@ -24,7 +24,7 @@
     [self addSubview:lineView];
 
     [lineView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.bottom.mas_equalTo(-width);
+        make.bottom.mas_equalTo(width);
         make.height.mas_equalTo(width);
         make.left.right.mas_equalTo(0);
     }];
@@ -63,7 +63,7 @@
     [self addSubview:lineView];
 
     [lineView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.right.mas_equalTo(-width);
+        make.right.mas_equalTo(width);
         make.width.mas_equalTo(width);
         make.top.bottom.mas_equalTo(0);
     }];

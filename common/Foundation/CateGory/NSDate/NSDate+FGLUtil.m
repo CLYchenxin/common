@@ -46,6 +46,29 @@
     }
 }
 
+- (NSInteger)fgl_daySpaceWithDate:(NSDate *)date
+{
+    NSDate *fromDate = self;
+    NSDate *toDate = date;
+
+    NSDateFormatter *f = [NSDate p_formatter];
+    [f setDateFormat:@"yyy-MM－dd"];
+
+    NSString *fromDateString = [f stringFromDate:fromDate];
+    NSString *toDateString = [f stringFromDate:toDate];
+
+    fromDate = [f dateFromString:fromDateString];
+    toDate = [f dateFromString:toDateString];
+
+    NSInteger space = [fromDate timeIntervalSince1970] - [toDate timeIntervalSince1970];
+
+    NSInteger spaceDay = space / (24*60*60);
+    if (spaceDay < 0) {
+        spaceDay = -spaceDay;
+    }
+    return spaceDay;
+}
+
 - (NSString *)p_shortDateString
 {
     NSDateFormatter *f = [NSDate p_formatter];

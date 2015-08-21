@@ -12,6 +12,7 @@
 #import "FGLCodingObjcet.h"
 #import "FGLRegexManager.h"
 #import "FGLDBModel.h"
+#import "FGLBHelper.h"
 
 // 扩展
 #import "NSObject+FGLSafety.h"

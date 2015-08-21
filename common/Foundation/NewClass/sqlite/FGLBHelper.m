@@ -29,7 +29,23 @@ static FGLBHelper *_instance = nil;
     return _instance;
 }
 
+static NSString *p_dbPath;
+
 + (NSString *)dbPath
+{
+    if (!p_dbPath) {
+        NSString *docsdir = [[NSFileManager fgl_documentsPath] stringByAppendingPathComponent:@"Cache"];
+        BOOL isDir;
+        BOOL exit = [[NSFileManager defaultManager] fileExistsAtPath:docsdir isDirectory:&isDir];
+        if (!exit || !isDir) {
+            [[NSFileManager defaultManager] createDirectoryAtPath:docsdir withIntermediateDirectories:YES attributes:nil error:nil];
+        }
+        p_dbPath = [docsdir stringByAppendingPathComponent:@"db.sqlite"];
+    }
+    return p_dbPath;
+}
+
++ (void)setDbPath:(NSString *)dbPath
 {
     NSString *docsdir = [[NSFileManager fgl_documentsPath] stringByAppendingPathComponent:@"Cache"];
     BOOL isDir;
@@ -37,8 +53,7 @@ static FGLBHelper *_instance = nil;
     if (!exit || !isDir) {
         [[NSFileManager defaultManager] createDirectoryAtPath:docsdir withIntermediateDirectories:YES attributes:nil error:nil];
     }
-    NSString *dbpath = [docsdir stringByAppendingPathComponent:@"db.sqlite"];
-    return dbpath;
+    p_dbPath = [docsdir stringByAppendingPathComponent:dbPath];
 }
 
 - (FMDatabaseQueue *)dbQueue

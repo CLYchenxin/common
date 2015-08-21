@@ -16,5 +16,6 @@
 + (FGLBHelper *)shareInstance;
 
 + (NSString *)dbPath;
++ (void)setDbPath:(NSString *)dbPath;
 
 @end

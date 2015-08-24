@@ -14,6 +14,8 @@
 #import "FGLDBModel.h"
 #import "FGLBHelper.h"
 
+#import "FGLDB.h"
+
 // 扩展
 #import "NSObject+FGLSafety.h"
 

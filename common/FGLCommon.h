@@ -15,6 +15,7 @@
 #import "FGLBHelper.h"
 
 #import "FGLDB.h"
+#import "FGLNetworkingOperation.h"
 
 // 扩展
 #import "NSObject+FGLSafety.h"

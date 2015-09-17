@@ -68,9 +68,6 @@
 		040D93491B8B1C8800A4F856 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		040D934B1B8B1C8800A4F856 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		040D934E1B8B1C8800A4F856 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		040D93591B8B1C8800A4F856 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		040D935A1B8B1C8800A4F856 /* demoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = demoTests.m; sourceTree = "<group>"; };
-		040D93651B8B1CB000A4F856 /* Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
 		040D93691B8B1CB000A4F856 /* NSArray+FGLString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+FGLString.h"; sourceTree = "<group>"; };
 		040D936A1B8B1CB000A4F856 /* NSArray+FGLString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+FGLString.m"; sourceTree = "<group>"; };
 		040D936C1B8B1CB000A4F856 /* NSDate+FGLUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+FGLUtil.h"; sourceTree = "<group>"; };
@@ -176,7 +173,6 @@
 			isa = PBXGroup;
 			children = (
 				040D933D1B8B1C8800A4F856 /* demo */,
-				040D93571B8B1C8800A4F856 /* demoTests */,
 				040D933C1B8B1C8800A4F856 /* Products */,
 				748055E423410153F591FDB7 /* Pods */,
 				107B7E524E126CC61F4C9B7F /* Frameworks */,
@@ -217,27 +213,9 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		040D93571B8B1C8800A4F856 /* demoTests */ = {
-			isa = PBXGroup;
-			children = (
-				040D935A1B8B1C8800A4F856 /* demoTests.m */,
-				040D93581B8B1C8800A4F856 /* Supporting Files */,
-			);
-			path = demoTests;
-			sourceTree = "<group>";
-		};
-		040D93581B8B1C8800A4F856 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				040D93591B8B1C8800A4F856 /* Info.plist */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
 		040D93641B8B1CB000A4F856 /* common */ = {
 			isa = PBXGroup;
 			children = (
-				040D93651B8B1CB000A4F856 /* Common.h */,
 				C1A902BC1BAABFBE0066C1F3 /* FGLCommon.h */,
 				040D93661B8B1CB000A4F856 /* Foundation */,
 				040D93931B8B1CB000A4F856 /* UIKit */,

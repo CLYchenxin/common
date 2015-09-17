@@ -54,7 +54,7 @@
 		040D93F71B8B1FE500A4F856 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 040D93F61B8B1FE500A4F856 /* libsqlite3.dylib */; };
 		89772191770162ED2ECC7870 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 52D13FCDDBE2EFB9E6B0BBD1 /* libPods.a */; };
 		C17874081B9434D1007133B1 /* NSObject+FGLNULL.m in Sources */ = {isa = PBXBuildFile; fileRef = C17874071B9434D1007133B1 /* NSObject+FGLNULL.m */; };
-		C18EECB91BAA994F00F49F22 /* FGLURLConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = C18EECB81BAA994F00F49F22 /* FGLURLConnectionOperation.m */; };
+		C18EECB91BAA994F00F49F22 /* FGLNetworkingOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = C18EECB81BAA994F00F49F22 /* FGLNetworkingOperation.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -154,8 +154,8 @@
 		92C956998A9D81D0F56AB8A5 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		C17874061B9434D1007133B1 /* NSObject+FGLNULL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+FGLNULL.h"; sourceTree = "<group>"; };
 		C17874071B9434D1007133B1 /* NSObject+FGLNULL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+FGLNULL.m"; sourceTree = "<group>"; };
-		C18EECB71BAA994F00F49F22 /* FGLURLConnectionOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FGLURLConnectionOperation.h; sourceTree = "<group>"; };
-		C18EECB81BAA994F00F49F22 /* FGLURLConnectionOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FGLURLConnectionOperation.m; sourceTree = "<group>"; };
+		C18EECB71BAA994F00F49F22 /* FGLNetworkingOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FGLNetworkingOperation.h; sourceTree = "<group>"; };
+		C18EECB81BAA994F00F49F22 /* FGLNetworkingOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FGLNetworkingOperation.m; sourceTree = "<group>"; };
 		C1A902BC1BAABFBE0066C1F3 /* FGLCommon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FGLCommon.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -552,8 +552,8 @@
 		C18EECB61BAA92FC00F49F22 /* networking */ = {
 			isa = PBXGroup;
 			children = (
-				C18EECB71BAA994F00F49F22 /* FGLURLConnectionOperation.h */,
-				C18EECB81BAA994F00F49F22 /* FGLURLConnectionOperation.m */,
+				C18EECB71BAA994F00F49F22 /* FGLNetworkingOperation.h */,
+				C18EECB81BAA994F00F49F22 /* FGLNetworkingOperation.m */,
 			);
 			path = networking;
 			sourceTree = "<group>";
@@ -666,7 +666,7 @@
 				040D93471B8B1C8800A4F856 /* ViewController.m in Sources */,
 				040D93DE1B8B1CB000A4F856 /* UITableViewCell+FGLSeparator.m in Sources */,
 				040D93C81B8B1CB000A4F856 /* NSMutableString+FGLReplace.m in Sources */,
-				C18EECB91BAA994F00F49F22 /* FGLURLConnectionOperation.m in Sources */,
+				C18EECB91BAA994F00F49F22 /* FGLNetworkingOperation.m in Sources */,
 				040D93CB1B8B1CB000A4F856 /* NSString+FGLPinyin.m in Sources */,
 				040D93D11B8B1CB000A4F856 /* FGLDB.m in Sources */,
 				040D93D81B8B1CB000A4F856 /* UIDevice+FGLHardware.m in Sources */,

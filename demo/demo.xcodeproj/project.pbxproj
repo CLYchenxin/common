@@ -56,15 +56,7 @@
 		5C43B3815355789B1EF2DB14 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 52D13FCDDBE2EFB9E6B0BBD1 /* libPods.a */; };
 		89772191770162ED2ECC7870 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 52D13FCDDBE2EFB9E6B0BBD1 /* libPods.a */; };
 		C17874081B9434D1007133B1 /* NSObject+FGLNULL.m in Sources */ = {isa = PBXBuildFile; fileRef = C17874071B9434D1007133B1 /* NSObject+FGLNULL.m */; };
-		C18EECB91BAA994F00F49F22 /* FGLURLConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = C18EECB81BAA994F00F49F22 /* FGLURLConnectionOperation.m */; settings = {ASSET_TAGS = (); }; };
-		C1C30B021B9FBFF000328653 /* CustomView.m in Sources */ = {isa = PBXBuildFile; fileRef = C1C30B011B9FBFF000328653 /* CustomView.m */; };
-		C1C30B041B9FBFFE00328653 /* CustomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C1C30B031B9FBFFE00328653 /* CustomView.xib */; };
-		C1C30B071B9FE12F00328653 /* MyTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = C1C30B061B9FE12F00328653 /* MyTableView.m */; };
-		C1C30B091B9FF8C500328653 /* listdownload.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C1C30B081B9FF8C500328653 /* listdownload.jpg */; };
-		C1DDDA0A1B9D721400BB5D30 /* LineView.m in Sources */ = {isa = PBXBuildFile; fileRef = C1DDDA091B9D721300BB5D30 /* LineView.m */; };
-		C1F567661BA006D4003532B6 /* NavigationView.m in Sources */ = {isa = PBXBuildFile; fileRef = C1F567651BA006D4003532B6 /* NavigationView.m */; };
-		C1F567681BA006DE003532B6 /* NavigationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C1F567671BA006DE003532B6 /* NavigationView.xib */; };
-		C1F5676B1BA008BF003532B6 /* MyCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = C1F5676A1BA008BF003532B6 /* MyCollectionView.m */; };
+		C18EECB91BAA994F00F49F22 /* FGLURLConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = C18EECB81BAA994F00F49F22 /* FGLURLConnectionOperation.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -177,19 +169,6 @@
 		C17874071B9434D1007133B1 /* NSObject+FGLNULL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+FGLNULL.m"; sourceTree = "<group>"; };
 		C18EECB71BAA994F00F49F22 /* FGLURLConnectionOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FGLURLConnectionOperation.h; sourceTree = "<group>"; };
 		C18EECB81BAA994F00F49F22 /* FGLURLConnectionOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FGLURLConnectionOperation.m; sourceTree = "<group>"; };
-		C1C30B001B9FBFF000328653 /* CustomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomView.h; sourceTree = "<group>"; };
-		C1C30B011B9FBFF000328653 /* CustomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomView.m; sourceTree = "<group>"; };
-		C1C30B031B9FBFFE00328653 /* CustomView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomView.xib; sourceTree = "<group>"; };
-		C1C30B051B9FE12F00328653 /* MyTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyTableView.h; sourceTree = "<group>"; };
-		C1C30B061B9FE12F00328653 /* MyTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyTableView.m; sourceTree = "<group>"; };
-		C1C30B081B9FF8C500328653 /* listdownload.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = listdownload.jpg; sourceTree = "<group>"; };
-		C1DDDA081B9D721300BB5D30 /* LineView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LineView.h; sourceTree = "<group>"; };
-		C1DDDA091B9D721300BB5D30 /* LineView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LineView.m; sourceTree = "<group>"; };
-		C1F567641BA006D4003532B6 /* NavigationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationView.h; sourceTree = "<group>"; };
-		C1F567651BA006D4003532B6 /* NavigationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationView.m; sourceTree = "<group>"; };
-		C1F567671BA006DE003532B6 /* NavigationView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NavigationView.xib; sourceTree = "<group>"; };
-		C1F567691BA008BF003532B6 /* MyCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCollectionView.h; sourceTree = "<group>"; };
-		C1F5676A1BA008BF003532B6 /* MyCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCollectionView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -242,21 +221,8 @@
 				040D93431B8B1C8800A4F856 /* AppDelegate.m */,
 				040D93451B8B1C8800A4F856 /* ViewController.h */,
 				040D93461B8B1C8800A4F856 /* ViewController.m */,
-				C1F567691BA008BF003532B6 /* MyCollectionView.h */,
-				C1F5676A1BA008BF003532B6 /* MyCollectionView.m */,
-				C1C30B051B9FE12F00328653 /* MyTableView.h */,
-				C1C30B061B9FE12F00328653 /* MyTableView.m */,
-				C1F567641BA006D4003532B6 /* NavigationView.h */,
-				C1F567651BA006D4003532B6 /* NavigationView.m */,
-				C1F567671BA006DE003532B6 /* NavigationView.xib */,
-				C1C30B001B9FBFF000328653 /* CustomView.h */,
-				C1C30B011B9FBFF000328653 /* CustomView.m */,
-				C1C30B031B9FBFFE00328653 /* CustomView.xib */,
-				C1DDDA081B9D721300BB5D30 /* LineView.h */,
-				C1DDDA091B9D721300BB5D30 /* LineView.m */,
 				040D93481B8B1C8800A4F856 /* Main.storyboard */,
 				040D934B1B8B1C8800A4F856 /* Images.xcassets */,
-				C1C30B081B9FF8C500328653 /* listdownload.jpg */,
 				040D934D1B8B1C8800A4F856 /* LaunchScreen.xib */,
 				040D933E1B8B1C8800A4F856 /* Supporting Files */,
 			);
@@ -697,10 +663,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				040D934A1B8B1C8800A4F856 /* Main.storyboard in Resources */,
-				C1C30B041B9FBFFE00328653 /* CustomView.xib in Resources */,
-				C1F567681BA006DE003532B6 /* NavigationView.xib in Resources */,
 				040D934F1B8B1C8800A4F856 /* LaunchScreen.xib in Resources */,
-				C1C30B091B9FF8C500328653 /* listdownload.jpg in Resources */,
 				040D934C1B8B1C8800A4F856 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -796,14 +759,12 @@
 				040D93E01B8B1CB000A4F856 /* UIView+FGLFrame.m in Sources */,
 				040D93DF1B8B1CB000A4F856 /* UIView+FGLBorder.m in Sources */,
 				040D93E11B8B1CB000A4F856 /* UIView+FGLScreenshot.m in Sources */,
-				C1C30B021B9FBFF000328653 /* CustomView.m in Sources */,
 				040D93C51B8B1CB000A4F856 /* NSError+FGLErrorCenter.m in Sources */,
 				040D93C31B8B1CB000A4F856 /* NSArray+FGLString.m in Sources */,
 				040D93F21B8B1FB400A4F856 /* FMDatabaseAdditions.m in Sources */,
 				040D93F11B8B1FB400A4F856 /* FMDatabase.m in Sources */,
 				040D93CD1B8B1CB000A4F856 /* NSURL+FGLParam.m in Sources */,
 				040D93E41B8B1CB000A4F856 /* FGLPlaceHolderTextView.m in Sources */,
-				C1F567661BA006D4003532B6 /* NavigationView.m in Sources */,
 				040D93C61B8B1CB000A4F856 /* NSFileManager+FGLFilePath.m in Sources */,
 				040D93D41B8B1CB000A4F856 /* UIButton+FGLEdgeInsets.m in Sources */,
 				040D93441B8B1C8800A4F856 /* AppDelegate.m in Sources */,
@@ -820,16 +781,13 @@
 				040D93CF1B8B1CB000A4F856 /* FGLRegexManager.m in Sources */,
 				040D93DC1B8B1CB000A4F856 /* UIScrollView+FGLAddition.m in Sources */,
 				040D93DD1B8B1CB000A4F856 /* UITableView+FGLSize.m in Sources */,
-				C1DDDA0A1B9D721400BB5D30 /* LineView.m in Sources */,
 				040D93DB1B8B1CB000A4F856 /* UIResponder+FGLNearby.m in Sources */,
 				C17874081B9434D1007133B1 /* NSObject+FGLNULL.m in Sources */,
 				040D93C41B8B1CB000A4F856 /* NSDate+FGLUtil.m in Sources */,
-				C1F5676B1BA008BF003532B6 /* MyCollectionView.m in Sources */,
 				040D93C91B8B1CB000A4F856 /* NSString+FGLEmoji.m in Sources */,
 				040D93F51B8B1FB400A4F856 /* FMResultSet.m in Sources */,
 				040D93C71B8B1CB000A4F856 /* NSObject+FGLSafety.m in Sources */,
 				040D93CE1B8B1CB000A4F856 /* FGLCodingObjcet.m in Sources */,
-				C1C30B071B9FE12F00328653 /* MyTableView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

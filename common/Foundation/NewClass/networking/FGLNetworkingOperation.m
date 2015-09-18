@@ -129,21 +129,6 @@ typedef NS_ENUM(NSInteger, FGLOperationState) {
     return [[NSString alloc] initWithData:self.responseData encoding:NSUTF8StringEncoding];
 }
 
-- (void)setState:(FGLOperationState)state
-{
-    
-    // 使用线程锁
-    
-    NSString *oldStateKey = [self p_KeyPathFromOperationState:self.state];
-    NSString *newStateKey = [self p_KeyPathFromOperationState:state];
-    
-    [self willChangeValueForKey:newStateKey];
-    [self willChangeValueForKey:oldStateKey];
-    _state = state;
-    [self didChangeValueForKey:oldStateKey];
-    [self didChangeValueForKey:newStateKey];
-}
-
 #pragma mark - NSURLConnectionDataDelegate, NSURLConnectionDelegate
 
 - (void)connection:(NSURLConnection *)connection didSendBodyData:(NSInteger)bytesWritten totalBytesWritten:(NSInteger)totalBytesWritten totalBytesExpectedToWrite:(NSInteger)totalBytesExpectedToWrite
@@ -187,11 +172,21 @@ typedef NS_ENUM(NSInteger, FGLOperationState) {
 
 #pragma mark - Private
 
+- (void)setState:(FGLOperationState)state
+{
+    NSString *oldStateKey = [self p_KeyPathFromOperationState:self.state];
+    NSString *newStateKey = [self p_KeyPathFromOperationState:state];
+    
+    if (oldStateKey)    [self willChangeValueForKey:oldStateKey];
+    if (newStateKey)    [self willChangeValueForKey:newStateKey];
+    _state = state;
+    if (oldStateKey)    [self didChangeValueForKey:oldStateKey];
+    if (oldStateKey)    [self didChangeValueForKey:newStateKey];
+}
+
 - (NSString *)p_KeyPathFromOperationState:(FGLOperationState)state
 {
     switch (state) {
-        case FGLOperationReadyState:
-            return @"isReady";
         case FGLOperationExecutingState:
             return @"isExecuting";
         case FGLOperationFinishedState:

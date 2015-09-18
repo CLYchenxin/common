@@ -18,7 +18,7 @@
 
 // 扩展
 #import "NSObject+FGLSafety.h"
-#import "NSObject+FGLNULL.h"
+//#import "NSObject+FGLNULL.h"
 
 #import "NSError+FGLErrorCenter.h"
 #import "NSDate+FGLUtil.h"

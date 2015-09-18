@@ -36,6 +36,9 @@
     FGLNetworkingOperation *task4 = [[FGLNetworkingOperation alloc] initWithURLString:@"http://www.zhihu.com"];
     task4.delegate = self;
     
+    FGLNetworkingOperation *task5 = [[FGLNetworkingOperation alloc] initWithURLString:@"http://www.google.cn"];
+    task5.delegate = self;
+    
 
     [task1 addDependency:task4];
     
@@ -43,7 +46,7 @@
     [queue addOperation:task1];
     [queue addOperation:task3];
     [queue addOperation:task4];
-    
+    [queue addOperation:task5];
 }
 
 - (void)networkingOperationDidStart:(FGLNetworkingOperation *)operation

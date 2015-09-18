@@ -28,27 +28,14 @@ typedef NS_ENUM(NSInteger, FGLOperationState) {
 
 @implementation FGLNetworkingOperation
 
-+ (void)networkRequestThreadEntryPoint:(id)object
++ (NSOperationQueue *)networkDelegateQueue
 {
-    @autoreleasepool {
-        [[NSThread currentThread] setName:@"Networking"];
-        
-        NSRunLoop *runLoop = [NSRunLoop currentRunLoop];
-        [runLoop addPort:[NSMachPort port] forMode:NSDefaultRunLoopMode];
-        [runLoop run];
-    }
-}
-
-+ (NSThread *)networkRequestThread
-{
-    static NSThread *_networkRequestThread = nil;
-    static dispatch_once_t oncePredicate;
-    dispatch_once(&oncePredicate, ^{
-        _networkRequestThread = [[NSThread alloc] initWithTarget:self selector:@selector(networkRequestThreadEntryPoint:) object:nil];
-        [_networkRequestThread start];
+    static NSOperationQueue *queue;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        queue = [[NSOperationQueue alloc] init];
     });
-    
-    return _networkRequestThread;
+    return queue;
 }
 
 - (instancetype)initWithURLString:(NSString *)URLString
@@ -104,20 +91,30 @@ typedef NS_ENUM(NSInteger, FGLOperationState) {
     
     _responseData = [NSMutableData data];
     
-    [self performSelector:@selector(p_operationDidStart) onThread:[[self class] networkRequestThread] withObject:nil waitUntilDone:NO modes:@[NSRunLoopCommonModes]];
+    self.connection = [[NSURLConnection alloc] initWithRequest:self.request delegate:self startImmediately:NO];
+    [self.connection setDelegateQueue:[[self class] networkDelegateQueue]];
+    [self.connection start];
+    
+    if ([self.delegate respondsToSelector:@selector(networkingOperationDidStart:)]) {
+        [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+            [self.delegate networkingOperationDidStart:self];
+        }];
+    }
 }
 
 - (void)cancel
 {
-    [super cancel];
-    [self.connection cancel];
-    
-    NSDictionary *userInfo = nil;
-    if ([self.request URL]) {
-        userInfo = @{NSURLErrorFailingURLErrorKey : [self.request URL]};
+    if (![self isFinished] && ![self isCancelled]) {
+        [super cancel];
+        [self.connection cancel];
+        
+        NSDictionary *userInfo = nil;
+        if ([self.request URL]) {
+            userInfo = @{NSURLErrorFailingURLErrorKey : [self.request URL]};
+        }
+        NSError *error = [NSError errorWithDomain:NSURLErrorDomain code:NSURLErrorCancelled userInfo:userInfo];
+        [self connection:self.connection didFailWithError:error];
     }
-    NSError *error = [NSError errorWithDomain:NSURLErrorDomain code:NSURLErrorCancelled userInfo:userInfo];
-    [self connection:self.connection didFailWithError:error];
 }
 
 #pragma mark - Public
@@ -132,7 +129,10 @@ typedef NS_ENUM(NSInteger, FGLOperationState) {
     return [[NSString alloc] initWithData:self.responseData encoding:NSUTF8StringEncoding];
 }
 
-- (void)setState:(FGLOperationState)state {
+- (void)setState:(FGLOperationState)state
+{
+    
+    // 使用线程锁
     
     NSString *oldStateKey = [self p_KeyPathFromOperationState:self.state];
     NSString *newStateKey = [self p_KeyPathFromOperationState:state];
@@ -186,25 +186,6 @@ typedef NS_ENUM(NSInteger, FGLOperationState) {
 }
 
 #pragma mark - Private
-
-- (void)p_cancelConnection
-{
-    
-}
-
-- (void)p_operationDidStart
-{
-    NSRunLoop *runLoop = [NSRunLoop currentRunLoop];
-    self.connection = [[NSURLConnection alloc] initWithRequest:self.request delegate:self startImmediately:NO];
-    [self.connection scheduleInRunLoop:runLoop forMode:NSRunLoopCommonModes];
-    [self.connection start];
-    
-    if ([self.delegate respondsToSelector:@selector(networkingOperationDidStart:)]) {
-        [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-            [self.delegate networkingOperationDidStart:self];
-        }];
-    }
-}
 
 - (NSString *)p_KeyPathFromOperationState:(FGLOperationState)state
 {
